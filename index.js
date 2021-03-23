@@ -14,13 +14,20 @@ btn.addEventListener("click", (e) => {
   li.addEventListener("click", (e) => {
     li.classList.toggle("done");
   });
+
+  //span for each li
   let span = document.createElement("span");
   span.innerText = "x";
+  span.addEventListener("click", (e) => {
+    e.stopPropagation();
+    ul.removeChild(li);
+    // li.classList.remove(li);
+  });
   li.append(span);
   console.log(li);
   ul.appendChild(li);
   inp.value = ""; // clear
-  console.log(tasks);
+
   //   let li = document.createElement("li");
   //   let span = document.createElement("span");
   //   li.innerText = input.value;
