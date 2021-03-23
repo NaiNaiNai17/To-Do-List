@@ -10,6 +10,10 @@ btn.addEventListener("click", (e) => {
   tasks.push(inp.value);
   let li = document.createElement("li");
   li.innerText = inp.value;
+  //attach eventListener on li
+  li.addEventListener("click", (e) => {
+    li.classList.toggle("done");
+  });
   let span = document.createElement("span");
   span.innerText = "x";
   li.append(span);
